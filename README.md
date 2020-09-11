@@ -28,10 +28,10 @@ cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 
 * 启动脚本需要更改如下环境变量内容
 
-> 替换 `GRAPHITE_URL` 的值为自己的 `graphite` 地址，可留空
-> 替换 `SLACK_WEB_HOOK` 的值为自己的 slack web hook 地址，可留空
-> 替换 `CONTAINER_BEACON` 的值为自己的 beacon 容器名称，可留空
-> 替换 `CONTAINER_ECDSA` 的值为自己的 ecdsa 容器名称，可留空
+* 替换 `GRAPHITE_URL` 的值为自己的 `graphite` 地址，可留空
+* 替换 `SLACK_WEB_HOOK` 的值为自己的 slack web hook 地址，可留空
+* 替换 `CONTAINER_BEACON` 的值为自己的 beacon 容器名称，可留空
+* 替换 `CONTAINER_ECDSA` 的值为自己的 ecdsa 容器名称，可留空
 
 > 启动脚本内容 `start_keep-monitor.sh`
 ```bash
@@ -64,7 +64,7 @@ $DOCKER_IMAGE
 * 默认检测三次peer数量低于10 则会报警到slack
 
 ## 效果展示
-> 日志内容
+* 日志内容
 ```
 2020-09-11 09:19:13,872 INFO     main current thread_list: ['keep-beacon', 'keep-ecdsa']
 2020-09-11 09:19:22,869 INFO     ssh -o StrictHostKeyChecking=no root@127.0.0.1 docker ps | grep keep-ecdsa | grep -v Restarting RECODE1: 0, OUTPUT1: a5ec9acd0bb2        keepnetwork/keep-ecdsa-client:v1.2.0-rc.4                               "/usr/local/bin/keep…"   24 hours ago        Up 2 hours          0.0.0.0:3920->3919/tcp                                          keep-ecdsa.
@@ -74,9 +74,9 @@ $DOCKER_IMAGE
 2020-09-11 09:19:22,957 INFO     ssh -o StrictHostKeyChecking=no root@127.0.0.1 docker logs --tail 400 keep-beacon 2>&1 |grep 'connected peers'|tail -n1 RECODE: 0, OUTPUT: 2020-09-11T09:19:21.953Z
 2020-09-11 09:19:22,957 INFO     sending graphite data path: keep.testnet.keep-beacon_peers.pos-test-hk-02, metric: 190
 ```
-> grafana 数据展示
+* grafana 数据展示
 ![img-w500](/images/202009111728.png)
 
 
-> slack 收到的报警消息
+* slack 收到的报警消息
 ![img-w500](/images/202009111726.png)

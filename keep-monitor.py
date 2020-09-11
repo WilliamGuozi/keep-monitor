@@ -111,7 +111,7 @@ def judge_peer_count(hostname, container, target_server):
             ALERT_STATUS = False
             ERROR_COUNT = 0
 
-        if target_server != '':
+        if target_server != '' and PEERS_COUNT != -2:
             path = "{}.{}.{}.{}".format(PROJECT, NET, container + "_peers", hostname)
             send_to_graphite(target_server, path, PEERS_COUNT, 'pos')
 

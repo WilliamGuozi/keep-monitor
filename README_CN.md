@@ -75,8 +75,10 @@ $DOCKER_IMAGE
 2020-09-11 09:19:22,957 INFO     sending graphite data path: keep.testnet.keep-beacon_peers.pos-test-hk-02, metric: 190
 ```
 * grafana 数据展示
+
 ![img-w500](/images/202009111728.png)
 
 
 * slack 收到的报警消息
+
 ![img-w500](/images/202009111726.png)

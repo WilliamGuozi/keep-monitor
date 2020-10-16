@@ -57,7 +57,7 @@ docker run -d \
 --restart always \
 --network host \
 -v /root/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
--e GRAPHITE_URL="graphite.example.com"\
+-e GRAPHITE_URL="graphite.example.com" \
 -e SLACK_WEB_HOOK="https://hooks.slack.com/services/xxxxxxxxx" \
 -e CONTAINER_BEACON="keep-beacon" \
 -e CONTAINER_ECDSA="keep-ecdsa" \
